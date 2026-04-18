@@ -1,255 +1,347 @@
-const papyrusBenefits = [
+import {
+  ArrowRight,
+  MessageCircle,
+} from "lucide-react";
+
+import { FaInstagram, FaFacebookF } from "react-icons/fa6";
+
+const services = [
   {
     title: "Coltivazione",
-    text: "Il papiro nasce nel territorio e conserva nella materia la memoria del luogo da cui proviene.",
+    description:
+      "Il papiro nasce dal territorio e conserva nella materia il legame con Fiumefreddo di Sicilia.",
     image:
-      "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Lavorazione",
-    text: "Ogni fibra viene aperta e composta a mano, senza processi industriali, con una tecnica lenta e precisa.",
+    description:
+      "Ogni fibra viene aperta e composta a mano, seguendo una tecnica lenta e artigianale.",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80",
   },
   {
     title: "Supporto d'artista",
-    text: "Il foglio finale non è solo base pittorica, ma parte viva dell'opera e della sua identità.",
+    description:
+      "Il foglio finale diventa parte viva dell'opera, non semplice base pittorica, ma valore aggiunto.",
     image:
-      "https://images.unsplash.com/photo-1517495306984-f84210f9daa8?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
-const artworks = [
+const works = [
   {
-    id: 1,
-    title: "Memorie del Nilo",
+    title: "Materia e memoria",
+    category: "Tecnica mista su papiro",
     image:
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1578301979108-0d6d7ff1a5f2?auto=format&fit=crop&w=900&q=80",
   },
   {
-    id: 2,
-    title: "Fibra e Luce",
+    title: "Tracce del territorio",
+    category: "Opera contemporanea",
     image:
-      "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80",
   },
   {
-    id: 3,
-    title: "Tracce di Sicilia",
+    title: "Fibra viva",
+    category: "Ricerca materica",
     image:
-      "https://images.unsplash.com/photo-1578301978018-3005759f48f7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=900&q=80",
   },
   {
-    id: 4,
-    title: "Materia Antica",
+    title: "Sicilia interiore",
+    category: "Serie recente",
     image:
-      "https://images.unsplash.com/photo-1578926288207-a90a5366759d?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 5,
-    title: "Segni sul Papiro",
-    image:
-      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80",
   },
 ];
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="text-xs text-[#655648] transition hover:text-[#b18c55]"
-    >
-      {children}
-    </a>
-  );
-}
-
-function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center justify-center rounded-md bg-[#c9a35f] px-5 py-3 text-sm text-[#fffdf8] transition hover:bg-[#b48c49]"
-    >
-      {children}
-    </a>
-  );
-}
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#f6f0e5] text-[#2e241e]">
-      <header className="sticky top-0 z-50 border-b border-[#e1d7ca] bg-[#f7f1e7]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-          <p className="font-serif text-2xl italic text-[#6d5a4e] sm:text-3xl">
-            Michele Patanè
-          </p>
-
-          <nav className="hidden items-center gap-6 md:flex">
-            <NavLink href="#michele">Michele</NavLink>
-            <NavLink href="#papiro">Il papiro</NavLink>
-            <NavLink href="#shop">Opere</NavLink>
-            <NavLink href="#contatti">Contatti</NavLink>
-          </nav>
-
-          <PrimaryButton href="#contatti">Contatta l'artista</PrimaryButton>
-        </div>
-      </header>
-
-      <section className="relative overflow-hidden border-b border-[#ddd3c6]">
-        <div className="absolute inset-0">
-          <img
-            src="https://scontent-mxp1-1.xx.fbcdn.net/v/t39.30808-6/476014214_9994894197194219_1341100536125868275_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=IkUwKPFJOAYQ7kNvwEH1_CR&_nc_oc=Adq8N2Dky5OCS8vPhDtuubtva8sXjsjzofEh0Z43T99a9TKqz_zf6FrV6U0F78UmtHw&_nc_zt=23&_nc_ht=scontent-mxp1-1.xx&_nc_gid=iskuk29BvMkFJTs0ESVLdg&_nc_ss=7a3a8&oh=00_Af0kVXhIoRfG-kAaUUZ_ZoJiBLlL_4nGHXS1hRSGXVNeSA&oe=69E8B6FC"
-            alt="Dettaglio di materiali e opere nello studio dell'artista"
-            className="h-full w-full object-cover"
+    <main className="bg-[#d9d2ca] p-4 md:p-6">
+      <div className="mx-auto max-w-[1400px] overflow-hidden rounded-[36px]">
+        {/* HERO */}
+        <section className="relative min-h-[92vh] overflow-hidden bg-[#d8d0c8]">
+          <div
+            className="absolute inset-0 bg-cover bg-top"
+            style={{
+              backgroundImage:
+                "url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/604673758_26194483846804897_6181029456100335498_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=rCO8ihKKHfcQ7kNvwGcDQtg&_nc_oc=AdoheN75-aOot26hVHHC8NX1NB8MyYctc4Tv4Onhu1AZRHRHrthn6gt-bAAawVS0LVk&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=eECqkFUxnOhPlHTRHMXJoQ&_nc_ss=7a3a8&oh=00_Af3l7GOicwL7EASd0HtkDnFloCR3NlZGfmk0KFlY9Kt22w&oe=69E93B48')",
+            }}
           />
-          <div className="absolute inset-0 bg-[#1d1713]/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1d1713]/20 via-transparent to-[#1d1713]/10" />
-        </div>
 
-        <div className="relative mx-auto flex min-h-[520px] max-w-[1280px] items-center justify-center px-4 py-24 text-center sm:px-6 lg:min-h-[620px] lg:px-8">
-          <div className="max-w-4xl text-[#f7f1e7]">
-            <h1 className="font-serif text-5xl italic leading-[0.95] sm:text-6xl lg:text-7xl xl:text-[5.6rem]">
-              Michele Patanè
-            </h1>
-            <p className="mt-4 font-serif text-2xl italic sm:text-3xl lg:text-4xl">
-              Riconosciuto patrimonio immateriale della Sicilia
-            </p>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#f1eadf] sm:text-lg">
-              Grazie alle sue opere che nascono dall'incontro tra pittura, lavorazione artigianale
-              del papiro e memoria del territorio di Fiumefreddo di Sicilia.
-            </p>
-          </div>
-        </div>
-      </section>
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f1ebe5]/30 via-transparent to-[#bdaea0]/10" />
+          <div className="absolute left-1/2 top-1/2 h-[360px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-t-[180px] bg-[#bfae9f]/20 blur-[1px]" />
 
-      <div className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <section id="michele" className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-          <article className="rounded-[28px] bg-[#f7f1e7] p-8 shadow-[0_1px_0_rgba(0,0,0,0.04)] sm:p-10 lg:p-12">
-            <h2 className="font-serif text-4xl leading-tight text-[#2d231d] sm:text-5xl">
-              Chi è Michele Patanè?
-            </h2>
-            <p className="mt-6 text-base leading-8 text-[#5a4c42] sm:text-lg">
-              Artista e artigiano, Michele Patanè custodisce una tecnica rara:
-              la coltivazione e la lavorazione del papiro eseguite ancora oggi
-              con metodi interamente manuali. Le sue opere su papiro
-              nascono da una materia viva e da una ricerca
-              visiva che unisce gesto contemporaneo e tradizione.
-            </p>
-            <div className="mt-8">
-              <PrimaryButton href="#shop">Scopri le opere</PrimaryButton>
+          <header className="absolute left-0 top-0 z-20 flex w-full items-center justify-between px-6 py-5 md:px-10">
+            <div className="text-[28px] font-semibold tracking-[0.2em] text-white md:text-[32px]">
+              MICHELE PATANÈ
             </div>
-          </article>
 
-          <div className="overflow-hidden rounded-[48px_48px_140px_48px] bg-[#ddd1c4]">
-            <img
-              src="https://scontent-mxp2-1.xx.fbcdn.net/v/t39.30808-6/604673758_26194483846804897_6181029456100335498_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=rCO8ihKKHfcQ7kNvwFiQYyT&_nc_oc=Adpq8ReDZcSLL0HDOc-2grbjnQzL6brsPAEWyW_9BBvEKeGngxKNP_y4g6sN8rf1pA8&_nc_zt=23&_nc_ht=scontent-mxp2-1.xx&_nc_gid=L-zt2MQ8e0lJkcOkN_op8w&_nc_ss=7a3a8&oh=00_Af1UtM3kFehTAFLh6K9E2kI33NhBdXX_jPwpdsb4LlPOUw&oe=69E89288"
-              alt="Ritratto dell'artista Michele Patanè"
-              className="h-[420px] w-full object-cover sm:h-[520px]"
-            />
-          </div>
-        </section>
+            <div className="flex items-center gap-8">
+              <nav className="hidden items-center gap-10 text-[11px] font-medium uppercase tracking-[0.2em] text-white md:flex">
+                <a href="#artista" className="transition hover:opacity-70">
+                  L&apos;artista
+                </a>
+                <a href="#papiro" className="transition hover:opacity-70">
+                  Il papiro
+                </a>
+                <a href="#opere" className="transition hover:opacity-70">
+                  Le opere
+                </a>
+              </nav>
 
-        <section id="papiro" className="mt-16 rounded-[28px] bg-[#b6bcad] px-6 py-12 sm:px-8 lg:px-10 lg:py-16">
-          <div className="text-center">
-            <h2 className="font-serif text-4xl italic text-[#2f261f] sm:text-5xl">
-              L'arte del papiro
-            </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#4d433b] sm:text-lg">
-              Un sapere antico che Michele continua a portare nel presente,
-              trasformando il papiro in un supporto unico per opere dal forte
-              valore materico e identitario.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {papyrusBenefits.map((item) => (
-              <article
-                key={item.title}
-                className="overflow-hidden rounded-t-[120px] rounded-b-[18px] bg-[#f7f1e7]"
+              <a
+                href="#contatti"
+                className="rounded-sm bg-[#e9dfd4] px-5 py-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#4a433d] transition hover:bg-[#f3ebe3]"
               >
-                <div className="mx-auto mt-6 h-24 w-24 overflow-hidden rounded-full border border-[#e5dccf]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="p-6 text-center sm:p-7">
-                  <h3 className="font-serif text-3xl italic text-[#2d231d]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-sm leading-7 text-[#5d4e44] sm:text-[15px]">
-                    {item.text}
-                  </p>
-                </div>
-              </article>
+                Contatti
+              </a>
+            </div>
+          </header>
+
+          <div className="absolute right-6 top-24 z-20 flex gap-2 md:right-10 md:top-28">
+            {[0, 1, 2, 3].map((i) => (
+              <span
+                key={i}
+                className={`h-3 w-3 rounded-full ${i === 0 ? "bg-white" : "bg-white/50"
+                  }`}
+              />
             ))}
           </div>
-        </section>
 
-        <section id="shop" className="mt-16">
-          <div className="text-center">
-            <h2 className="font-serif text-5xl italic text-[#7e6b5a] sm:text-6xl">
-              Opere
-            </h2>
-            <p className="mt-3 text-sm text-[#6a5a4d] sm:text-base">
-              Pezzi unici su fogli di papiro lavorati a mano
-            </p>
+          <div className="relative z-10 flex min-h-[92vh] items-center justify-center px-6 text-center">
+            <div className="max-w-3xl">
+              <h1 className="font-serif text-4xl leading-tight text-white md:text-6xl">
+                Michele Patanè
+              </h1>
+
+              <p className="mt-4 text-sm font-medium text-white/85 md:text-xl">
+                Inserito nel Registro delle Eredità Immateriali della Sicilia
+              </p>
+
+              <p className="mt-2 text-xs text-white/70 md:text-sm">
+                Artista poliedrico che dedica la sua vita all&apos;arte in tutte
+                le sue forme
+              </p>
+
+              <button className="mt-8 cursor-pointer bg-[#efe5da] px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4a433d] transition hover:bg-white">
+                Scopri le opere
+              </button>
+            </div>
           </div>
 
-          <div className="mt-10 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex min-w-max gap-5 lg:grid lg:min-w-0 lg:grid-cols-5 lg:gap-6">
-              {artworks.map((artwork) => (
-                <button
-                  key={artwork.id}
-                  type="button"
-                  className="group w-[220px] shrink-0 text-left lg:w-auto"
+          <div className="absolute bottom-6 left-6 z-20 flex items-center gap-4 text-white/85 md:bottom-8 md:left-10">
+            <a href="#" className="hover:text-white">
+              <FaInstagram className="h-4 w-4" />
+            </a>
+            <a href="#" className="hover:text-white">
+              <FaFacebookF className="h-4 w-4" />
+            </a>
+            <a href="#" className="hover:text-white">
+              <MessageCircle className="h-4 w-4" />
+            </a>
+          </div>
+
+          <a
+            href="#opere"
+            className="absolute bottom-6 right-6 z-20 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.18em] text-white/85 hover:text-white md:bottom-8 md:right-10"
+          >
+            Collezione recente
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </section>
+
+        {/* IL PAPIRO */}
+        <section
+          id="papiro"
+          className="bg-[#f2ece5] px-6 py-20 md:px-10 md:py-28"
+        >
+          <div className="mx-auto max-w-6xl">
+            <div className="text-center">
+              <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#8d8175]">
+                vero artigianato
+              </p>
+              <h2 className="mt-3 font-serif text-3xl text-[#2f2925] md:text-5xl">
+                L&apos;arte del papiro
+              </h2>
+            </div>
+
+            <div className="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
+              {services.map((item) => (
+                <article
+                  key={item.title}
+                  className="mx-auto w-full max-w-[320px]"
                 >
-                  <div className="overflow-hidden rounded-[18px] bg-[#e7ddd2]">
-                    <img
-                      src={artwork.image}
-                      alt={artwork.title}
-                      className="h-[300px] w-full object-cover cursor-pointer transition duration-500 group-hover:scale-105 sm:h-[340px] lg:h-[280px] xl:h-[320px]"
+                  <div className="overflow-hidden rounded-t-[999px] border border-[#d8ccc0] bg-[#e9ddd2]">
+                    <div
+                      className="h-[260px] w-full bg-cover bg-center"
+                      style={{ backgroundImage: `url('${item.image}')` }}
                     />
                   </div>
-                  <div className="px-1 pb-1 pt-4 text-center">
-                    <h3 className="font-serif text-xl text-[#2d231d] sm:text-2xl">
-                      {artwork.title}
+
+                  <div className="border-x border-b border-[#d8ccc0] bg-[#ecdcd0] px-8 py-8 text-center">
+                    <h3 className="font-serif text-2xl text-[#2f2925]">
+                      {item.title}
                     </h3>
+
+                    <p className="mt-4 text-sm leading-6 text-[#6f6258]">
+                      {item.description}
+                    </p>
+
+                    <a
+                      href="#"
+                      className="mt-6 inline-block text-[10px] font-semibold uppercase tracking-[0.22em] text-[#2f2925] transition hover:opacity-70"
+                    >
+                      Approfondisci
+                    </a>
                   </div>
-                </button>
+                </article>
               ))}
             </div>
           </div>
+        </section>
 
-          <div className="mt-10 text-center">
-            <PrimaryButton href="#contatti">Richiedi informazioni</PrimaryButton>
+        {/* L'ARTISTA */}
+        <section
+          id="artista"
+          className="grid bg-[#fbf8f3] md:grid-cols-[1.1fr_0.9fr]"
+        >
+          <div className="px-6 py-16 md:px-12 md:py-24 lg:px-20">
+            <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#9b8f82]">
+              Memoria, territorio, ricerca
+            </p>
+
+            <h2 className="mt-4 max-w-xl font-serif text-3xl leading-tight text-[#2f2925] md:text-5xl">
+              Un percorso artistico che unisce identità, materia e visione
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-[#6f6258] md:text-[15px]">
+              Michele Patanè sviluppa una ricerca personale che intreccia arti
+              visive, sperimentazione e tradizione. Il suo lavoro nasce da un
+              rapporto profondo con il territorio siciliano e con il valore
+              simbolico dei materiali, trattati come elementi vivi della
+              composizione.
+            </p>
+
+            <p className="mt-5 max-w-xl text-sm leading-7 text-[#6f6258] md:text-[15px]">
+              Tra i nuclei centrali della sua poetica emerge il papiro, non solo
+              come supporto, ma come presenza organica e culturale, capace di
+              custodire memoria, manualità e identità. La sua pratica si muove
+              tra gesto artistico e sapienza artigianale, in un dialogo continuo
+              tra radici e contemporaneità.
+            </p>
+
+            <a
+              href="#contatti"
+              className="mt-8 inline-flex items-center gap-3 bg-[#e9dfd4] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4a433d] transition hover:bg-[#f3ebe3]"
+            >
+              Conosci l&apos;artista
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="relative min-h-[420px] border-t border-[#e3d7ca] md:min-h-full md:border-l md:border-t-0">
+            <div className="absolute inset-0 bg-[#d8c8b6]" />
+            <div
+              className="absolute right-0 top-0 h-full w-full bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/516835224_24658527610400536_585980941922333497_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_ohc=XITqInAMhr4Q7kNvwHvbUSg&_nc_oc=AdrWisJJrAThUGcvcGi99bckaZdn3egO0Tcs2ZiDjcMRRsQ-2y3sncZea7w1zimryhs&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=1SAQj4xqoChVXoXv8Dfezw&_nc_ss=7a3a8&oh=00_Af3qa5FyPVbfWvKB8J00LyA_dIzt4DjRrTL9G1aHd4Hpnw&oe=69E9163F')",
+              }}
+            />
+            <div className="absolute inset-0 bg-[#c9b8a7]/20" />
+            <div className="absolute left-1/2 top-10 h-[78%] w-[72%] -translate-x-1/2 overflow-hidden rounded-t-[220px] border border-white/30">
+              <div
+                className="h-full w-full bg-cover bg-center"
+                style={{
+                  backgroundImage:
+                    "url('https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/516835224_24658527610400536_585980941922333497_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_ohc=XITqInAMhr4Q7kNvwHvbUSg&_nc_oc=AdrWisJJrAThUGcvcGi99bckaZdn3egO0Tcs2ZiDjcMRRsQ-2y3sncZea7w1zimryhs&_nc_zt=23&_nc_ht=scontent-fco2-1.xx&_nc_gid=1SAQj4xqoChVXoXv8Dfezw&_nc_ss=7a3a8&oh=00_Af3qa5FyPVbfWvKB8J00LyA_dIzt4DjRrTL9G1aHd4Hpnw&oe=69E9163F')",
+                }}
+              />
+            </div>
           </div>
         </section>
+
+        {/* OPERE / GALLERY */}
+        <section
+          id="opere"
+          className="bg-[#ddd0c1] px-6 py-20 md:px-10 md:py-24"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#8d8175]">
+                Opere recenti
+              </p>
+              <h2 className="mt-3 font-serif text-3xl text-[#2f2925] md:text-5xl">
+                Una galleria della ricerca
+              </h2>
+            </div>
+
+            <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {works.map((work) => (
+                <article key={work.title} className="group">
+                  <div className="overflow-hidden border border-[#bfae9f] bg-[#e9ddd2]">
+                    <div
+                      className="h-[250px] w-full cursor-pointer bg-cover bg-center transition duration-500 group-hover:scale-105"
+                      style={{ backgroundImage: `url('${work.image}')` }}
+                    />
+                  </div>
+
+                  <div className="border-x border-b border-[#bfae9f] bg-[#ddd0c1] px-4 py-4">
+                    <h3 className="font-serif text-xl text-[#2f2925]">
+                      {work.title}
+                    </h3>
+
+                    <p className="mt-1 text-sm text-[#6f6258]">
+                      {work.category}
+                    </p>
+
+                    <div className="mt-5 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#5c5046]">
+                      <a href="#" className="transition hover:opacity-70">
+                        Vedi
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FOOTER / CONTATTI */}
+        <footer
+          id="contatti"
+          className="bg-[#efe7dd] px-6 pt-16 md:px-10 md:pt-24"
+        >
+          <div className="mx-auto flex max-w-6xl justify-center">
+            <div className="w-full max-w-[560px] rounded-t-[280px] bg-[#e3d4c5] px-8 pb-10 pt-16 text-center md:px-14 md:pb-14 md:pt-24">
+              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#9b8f82]">
+                Contatti e informazioni
+              </p>
+
+              <h3 className="mt-4 font-serif text-2xl text-[#2f2925] md:text-4xl">
+                Parla con Michele
+              </h3>
+
+              <p className="mx-auto mt-5 max-w-[360px] text-sm leading-7 text-[#6f6258]">
+                Per mostre, collaborazioni, commissioni o richieste di approfondimento
+                sulle opere, è possibile entrare in contatto direttamente con
+                l&apos;artista.
+              </p>
+
+              <a
+                href="mailto:info@michelepatane.it"
+                className="mt-8 inline-flex items-center gap-2 bg-[#f7f1ea] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4a433d] transition hover:bg-white"
+              >
+                Scrivi ora
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
-
-      <footer
-        id="contatti"
-        className="border-t border-[#ddd3c6] bg-[#f1eadf] px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
-      >
-        <div className="mx-auto grid max-w-[1280px] gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div>
-            <h2 className="font-serif text-4xl italic text-[#2e241e] sm:text-5xl">
-              Contatti
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-[#5e5045]">
-              Per informazioni su opere, disponibilità e commissioni, contatta
-              direttamente l'artista. Potrai anche prenotare l'esclusivo tour del papiro tra luoghi pubblici e privati.
-            </p>
-          </div>
-
-          <div className="space-y-3 text-sm text-[#4f433a] sm:text-base">
-            <p>Email — info@michelepatane.it</p>
-            <p>Instagram — @michelepatane</p>
-            <p>Facebook — Michele Patanè</p>
-            <p>WhatsApp — +39 000 000 0000</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
