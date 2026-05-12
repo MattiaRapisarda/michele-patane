@@ -23,7 +23,7 @@ export function PapyrusSection({ services }: PapyrusSectionProps) {
                         <article key={item.title} className="mx-auto w-full max-w-[320px]">
                             <div className="overflow-hidden rounded-t-[999px] border border-[#d8ccc0] bg-[#e9ddd2]">
                                 <div
-                                    className="h-[260px] w-full bg-cover bg-center"
+                                    className="h-65 w-full bg-cover bg-center"
                                     style={{ backgroundImage: `url('${item.image}')` }}
                                 />
                             </div>
