@@ -35,15 +35,6 @@ export const works: Work[] = [
             "/images/opere/sentieri-dell-Etna.jpg",
     },
     {
-        title: "Radici sul mare",
-        category: "70cm X 50cm",
-        description:
-            "I rami che si intrecciano fino a farsi confine e cuore della Sicilia. Uno sguardo sospeso tra la nostalgia di chi è partito e il desiderio di chi attende.",
-        price: "€ 1.700",
-        image:
-            "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80",
-    },
-    {
         title: "Il teatro e la Montagna",
         category: "53cm X 36cm",
         description:
@@ -103,13 +94,13 @@ export const siteContent = {
         title: "Parla con Michele",
         description:
             "Per mostre, collaborazioni, commissioni o richieste di approfondimento sulle opere, è possibile entrare in contatto direttamente con l'artista.",
-        email: "info@michelepatane.it",
+        email: "https://wa.me/39476290616",
         ctaLabel: "Scrivi ora",
     },
     socialLinks: {
         instagram: "https://www.instagram.com/patane.michele/",
         facebook: "https://www.facebook.com/michele.patane.3",
-        whatsapp: "#",
+        whatsapp: "https://wa.me/39476290616",
     },
     navLinks: [
         { label: "L'artista", href: "#artista" },

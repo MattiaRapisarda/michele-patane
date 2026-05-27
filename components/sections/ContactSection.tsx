@@ -31,7 +31,7 @@ export function ContactSection({ contact }: ContactSectionProps) {
                     </p>
 
                     <a
-                        href={`mailto:${contact.email}`}
+                        href={`${contact.email}`}
                         className="mt-8 inline-flex items-center gap-2 bg-[#f7f1ea] px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4a433d] transition hover:bg-white"
                     >
                         {contact.ctaLabel}

@@ -38,7 +38,7 @@ export function HeroSection({
             <div className="absolute inset-0 bg-linear-to-r from-[#f1ebe5]/30 via-transparent to-[#bdaea0]/10" />
             <div className="absolute left-1/2 top-1/2 h-90 w-70 -translate-x-1/2 -translate-y-1/2 rounded-t-[180px] bg-[#bfae9f]/20 blur-[1px]" />
 
-            <header className="absolute left-0 top-0 z-20 flex w-full items-center justify-between px-6 py-5 md:px-10">
+            <header className="hidden md:block absolute left-0 top-0 z-20 flex w-full items-center justify-between px-6 py-5 md:px-10">
                 <div className="text-[28px] font-semibold tracking-[0.2em] text-white md:text-[32px]">
                     {brand}
                 </div>
